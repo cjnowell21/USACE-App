@@ -1,0 +1,26 @@
+import UIKit
+
+class ViewController: UIViewController {
+
+    var textView: UITextView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Create a UITextView
+        textView = UITextView(frame: view.bounds)
+        textView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(textView)
+
+        // Load the text file
+        if let path = Bundle.main.path(forResource: "example", ofType: "txt") {
+            do {
+                let text = try String(contentsOfFile: path)
+                textView.text = text
+            } catch {
+                print("Error loading text file: \(error.localizedDescription)")
+            }
+        }
+    }
+
+}
