@@ -1,0 +1,45 @@
+import UIKit
+
+class ViewController: UIViewController {
+
+    // Text fields
+    var field1: UITextField!  
+    var field2: UITextField! 
+    // ...
+    var field20: UITextField!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Create text fields
+        field1 = UITextField()  
+        field1.borderStyle = .roundedRect
+        field1.placeholder = "Field 1"
+        // Set frames and configure other fields
+        
+        field2 = UITextField()
+        // ...
+        
+        field20 = UITextField() 
+
+        // Add text fields as subviews 
+        view.addSubview(field1)
+        view.addSubview(field2)
+        // ... 
+        view.addSubview(field20)
+    }
+
+    // Get field values
+    @IBAction func submitTapped(_ sender: UIButton) {
+        
+        if let text1 = field1.text {
+            print(text1) 
+        }
+        
+        if let text2 = field2.text {
+            print(text2)
+        }
+        // ...
+    }
+
+}
